@@ -1,0 +1,8 @@
+<h2>Question</h2>
+
+<p><%= @question.body %></p>
+<p>User_id: <%= @question.user_id %></p>
+
+<p><%= link_to 'Edit this question', edit_question_path(@question) %></p>
+
+<p><%= link_to 'Main page', questions_path %></p>
