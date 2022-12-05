@@ -1,5 +1,10 @@
 body {
+	color: #03071E;
 	font-family: sans-serif;
+}
+
+a, button {
+	color: #DC2F02;
 }
 
 .title-lg {

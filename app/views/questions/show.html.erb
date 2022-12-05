@@ -1,9 +1,14 @@
-<h2 class="title-lg">Question</h2>
+<div class="container">
+	<h2 class="title-lg">Question</h2>
 
-<p class="mt"><%= @question.body %></p>
-<p>User_id: <%= @question.user_id %></p>
+	<p class="mt"><%= @question.body %></p>
+	<p>User_id: <%= @question.user_id %></p>
 
-<p class="mt"><%= link_to 'Edit this question', edit_question_path(@question) %></p>
-<p class="mt"><%= button_to 'Delete this question', question_path(@question), method: :delete %></p>
+	<div class="mt">
+		<%= link_to fa_icon('pencil'), edit_question_path(@question), title: 'Edit this question' %>
+		<%= button_to fa_icon('trash-o'), question_path(@question), method: :delete, 
+		title: 'Delete this question' %>
+	</div>
 
-<p class="mt"><%= link_to 'Main page', questions_path %></p>
+	<p class="mt"><%= link_to 'Main page', questions_path %></p>
+</div>
