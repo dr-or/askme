@@ -7,7 +7,9 @@
 	<div class="mt">
 		<%= link_to fa_icon('pencil'), edit_question_path(@question), title: 'Edit this question' %>
 		<%= button_to fa_icon('trash-o'), question_path(@question), method: :delete, 
-		title: 'Delete this question' %>
+		title: 'Delete this question', data: { turbo_confirm: 'Are you sure?' } %>
+		<% eye_icon = @question.hidden? ? 'eye' : 'eye-slash' %>
+		<%= button_to fa_icon(eye_icon), hide_question_path(@question), method: :put %>
 	</div>
 
 	<p class="mt"><%= link_to 'Main page', questions_path %></p>
