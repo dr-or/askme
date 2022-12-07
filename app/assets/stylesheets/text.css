@@ -22,3 +22,11 @@ a, button {
 .text-sm {
 	font-size: 80%;
 }
+
+.text {
+	font-size: 100%;
+}
+
+.text-grey {
+	color: #a8a8a8;
+}

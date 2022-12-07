@@ -3,31 +3,33 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.create(question_params)
-    redirect_to question_path(question)
+    redirect_to question_path(question), notice: 'your question is created'
   end
 
   def update
     @question.update(question_params)
 
-    redirect_to question_path(@question)
+    redirect_to question_path(@question), notice: 'your question is updated'
   end
 
   def destroy
     @question.destroy
 
-    redirect_to questions_path
+    redirect_to questions_path, notice: 'your question is deleted'
   end
 
   def hide
     @question.toggle!(:hidden)
 
-    redirect_to question_path(@question)
+    redirect_to questions_path
   end
 
   def show
   end
 
   def index
+    @question = Question.new
+
     @questions = Question.all
   end
 
