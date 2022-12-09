@@ -30,3 +30,7 @@ a, button {
 .text-grey {
 	color: #a8a8a8;
 }
+
+.text-bold {
+	font-weight: bold;
+}
