@@ -16,7 +16,9 @@
         <p class="title-sm text-bold"><%= link_to 'ask.me', root_path %></p>
         <div>
           <% if current_user.present? %>
-            <%= content_tag 'span', "@#{current_user.nickname}", class: 'mr-sm' %>
+            <span class="mr-sm">
+              <%= link_to "@#{current_user.nickname}", edit_user_path(current_user) %>
+            </span>
             <%= button_to 'Sign out', session_path, method: :delete %>
           <% else %>
             <%= link_to 'Sign up', new_user_path, class: 'button button-yellow mr-sm' %>
