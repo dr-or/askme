@@ -12,6 +12,11 @@
 }
 
 .form-text-area {
-	width: 100%;
 	box-sizing: border-box;
+	width: 100%;
+}
+
+.color-field {
+	height: 40px;
+	width: 23%;
 }

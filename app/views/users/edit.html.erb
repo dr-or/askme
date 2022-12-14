@@ -25,6 +25,9 @@
 			<p class="mt"><%= form.label :password_confirmation %></p>
 			<p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
 
+			<p class="mt"><%= form.label :navbar_color %></p>
+			<p><%= form.color_field :navbar_color, class: 'color-field' %></p>
+
 			<p class="mt-lg">
 				<%= form.submit 'Update', class: 'button button-main' %> / 
 				<%= link_to 'return', :back %>		

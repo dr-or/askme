@@ -12,7 +12,8 @@
 
   <body>
     <div class="wrapper">
-      <div class="navbar">
+      <div class="navbar" style="background-color: 
+        <%= current_user&.navbar_color || '#370617' %>;">
         <p class="title-sm text-bold"><%= link_to 'ask.me', root_path %></p>
         <div>
           <% if current_user.present? %>
