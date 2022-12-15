@@ -1,0 +1,23 @@
+<div class="user-box">
+	<h2 class="title-lg mt-lg"><%= @user.name %></h2>
+	<h2 class="text-bold mt mb-lg"><%= display_nickname(@user) %></h2>
+</div>
+
+<div class="container">
+	<%= link_to 'Ask me', new_question_path(user_id: @user.id), class: 'button button-yellow' %>
+
+	<p><%= render 'questions/form', question: @question %></p>
+</div>
+
+<div class="container mt">
+	<h1 class="title-lg">
+		<%= @questions.count %>
+		<%= inclination(@questions.count, 'question', 'questions') %>
+	</h1>
+</div>
+
+<% @questions.each do |question| %>
+	<div class="container mt-sm <%= 'translucent' if question.hidden? %>">
+		<%= render question %>
+	</div>
+<% end %>

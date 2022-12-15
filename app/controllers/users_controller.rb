@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[edit update destroy]
+  before_action :set_user, only: %i[destroy edit show update]
 
   def create
     @user = User.new(user_params)
@@ -20,6 +20,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def show
+    @questions = @user.questions
+    @question = Question.new(user: @user)
   end
 
   def update

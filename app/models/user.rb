@@ -5,6 +5,8 @@ class User < ApplicationRecord
   VALID_NAVBAR_COLOR_REGEXP = /\A\#\h{3}{1,2}\z/
   VALID_NICKNAME_REGEXP = /\A\w+\z/
 
+  has_many :questions, dependent: :delete_all
+
   before_validation :downcase_email
   before_validation :downcase_nickname
 

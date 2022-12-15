@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
 
     if @question.save
-      redirect_to question_path(@question), notice: 'your question is created'
+      redirect_to user_path(@question.user), notice: 'your question is created'
     else
       flash.now[:alert] = 'data invalid'
 
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to question_path(@question), notice: 'your question is updated'
+      redirect_to user_path(@question.user), notice: 'your question is updated'
     else
       flash.now[:alert] = 'data invalid'
 
@@ -24,9 +24,10 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    @user = @question.user
     @question.destroy
 
-    redirect_to questions_path, notice: 'your question is deleted'
+    redirect_to user_path(@user), notice: 'your question is deleted'
   end
 
   def hide
@@ -45,7 +46,8 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @user = User.find(params[:user_id])
+    @question = Question.new(user: @user)
   end
 
   def edit
