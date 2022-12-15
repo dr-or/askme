@@ -18,7 +18,7 @@
         <div>
           <% if current_user.present? %>
             <span class="mr-sm">
-              <%= link_to display_nickname(current_user), edit_user_path(current_user) %>
+              <%= link_to display_nickname(current_user), user_path(current_user) %>
             </span>
             <%= button_to 'Sign out', session_path, method: :delete %>
           <% else %>
