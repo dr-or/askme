@@ -31,6 +31,10 @@ a, button {
 	color: #a8a8a8;
 }
 
+.text-light-grey {
+  color: #c0c0c0;
+}
+
 .text-red {
 	color: #d00000;
 }
@@ -43,6 +47,6 @@ a, button {
 	font-weight: bold;
 }
 
-.line-break {
-	white-space: pre-line;
+.text-center {
+  text-align: center;
 }

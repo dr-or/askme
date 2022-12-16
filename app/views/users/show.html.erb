@@ -7,21 +7,25 @@
 	<p class="text-bold mt mb-lg"><%= display_nickname(@user) %></p>
 </div>
 
-<div class="container">
-	<%= link_to 'Ask me', new_question_path(user_id: @user.id), class: 'button button-yellow' %>
+<% if @questions.count.zero? %>
+		<%= render 'no_questions', user: @user %>
+<% else %>
+	<div class="container">
+		<%= link_to 'Ask me', new_question_path(user_id: @user), class: 'button button-yellow' %>
 
-	<p><%= render 'questions/form', question: @question %></p>
-</div>
-
-<div class="container mt">
-	<h1 class="title-lg">
-		<%= @questions.count %>
-		<%= inclination(@questions.count, 'question', 'questions') %>
-	</h1>
-</div>
-
-<% @questions.each do |question| %>
-	<div class="container mt-sm <%= 'translucent' if question.hidden? %>">
-		<%= render question %>
+		<p><%= render 'questions/form', question: @question %></p>
 	</div>
+
+	<div class="container mt">
+		<h1 class="title-lg">
+			<%= @questions.count %>
+			<%= inclination(@questions.count, 'question', 'questions') %>
+		</h1>	
+	</div>
+
+	<% @questions.each do |question| %>
+		<div class="container mt-sm <%= 'translucent' if question.hidden? %>">
+			<%= render question %>
+		</div>
+	<% end %>
 <% end %>

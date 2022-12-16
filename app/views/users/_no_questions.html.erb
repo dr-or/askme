@@ -1,0 +1,11 @@
+<div class="container text-center mt-sm">
+  <p class="title-sm text-grey">
+    <%= display_nickname(@user) %> has not been asked any questions yet.
+  </p>
+
+  <div class="mt-lg mb-lg fa-4x text-light-grey">
+    <%= fa_stacked_icon 'question', base: 'circle-o' %>
+  </div>
+
+  Be the first <%= link_to 'to ask!', new_question_path(user_id: @user) %>
+</div>
