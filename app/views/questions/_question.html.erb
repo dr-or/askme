@@ -2,6 +2,12 @@
 	<%= simple_format h(question.body) %>
 </div>
 
+<% if question.answer.present? %>
+	<div class="mb-sm text-dark-red">
+		<%= simple_format h(question.answer) %>
+	</div>
+<% end %>
+
 <div class="question-footer text-sm">
 	<div class="text-grey">
 		<%= l(question.created_at, format: :short) %>
@@ -9,10 +15,13 @@
 
 	<% if current_user == question.user %>
 		<div>
-			<%= link_to fa_icon('pencil'), edit_question_path(question), 
-				title: 'Edit this question' %>
+			<% edit_icon = question.answer.present? ? 'pencil' : 'reply' %>
+			<% edit_title = question.answer.present? ? 'Edit' : 'Answer' %>
+			<%= link_to fa_icon(edit_icon), edit_question_path(question), 
+				title: "#{edit_title} this question", class: 'mr-sm' %>
 			<%= button_to fa_icon('trash-o'), question_path(question), method: :delete, 
-				title: 'Delete this question', data: { turbo_confirm: 'Are you sure?' } %>
+				title: 'Delete this question', data: { turbo_confirm: 'Are you sure?' },
+				class: 'mr-sm' %>
 			<% eye_icon = question.hidden? ? 'eye' : 'eye-slash' %>
 			<%= button_to fa_icon(eye_icon), hide_question_path(question), method: :put %>
 		</div>
