@@ -7,6 +7,8 @@ class QuestionsController < ApplicationController
 
     @question = Question.new(question_params)
 
+    @question.author = current_user
+
     if @question.save
       redirect_to user_path(@question.user), notice: 'your question is created'
     else

@@ -6,6 +6,8 @@ class User < ApplicationRecord
   VALID_NICKNAME_REGEXP = /\A\w+\z/
 
   has_many :questions, dependent: :delete_all
+  has_many :authored_questions, class_name: 'Question', foreign_key: 'author_id',
+    dependent: :nullify
 
   before_validation :downcase_email
   before_validation :downcase_nickname

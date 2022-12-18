@@ -1,3 +1,10 @@
+<div class="text-grey mb-sm">
+	<% author = question.author.present? ? 
+		(link_to display_nickname(question.author), user_path(question.author)) : 
+		'anonymous user' %>
+	<%= author %> asked:
+</div>
+
 <div class="mb-sm">
 	<%= simple_format h(question.body) %>
 </div>
