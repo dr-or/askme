@@ -7,6 +7,17 @@
 		<% end %>
 	</div>
 
+	<div class="mt">
+		<p>
+			<%= image_tag @user.gravatar_url, title: display_nickname(@user), class: 'rounded' %>
+		</p>
+		<p class="text-sm">
+			If you want to change your avatar, register on 
+			<%= link_to 'Gravatar', 'https://gravatar.com', target: '_blank' %> 
+			and load your photo there.
+		</p>	
+	</div>
+
 	<div class="mt-lg">
 		<%= form_with model: @user, data: { turbo: false } do |form| %>
 			<p><%= form.label :name, 'Your name' %></p>

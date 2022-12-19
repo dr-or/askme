@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include Gravtastic
   has_secure_password
 
   VALID_EMAIL_REGEXP = /\A[a-z\d_+.\-]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -17,6 +18,8 @@ class User < ApplicationRecord
   validates :navbar_color, format: { with: VALID_NAVBAR_COLOR_REGEXP }
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 40 },
     format: { with: VALID_NICKNAME_REGEXP }
+
+  gravtastic(secure: true, filetype: :png, size: 100, default: 'mm')
 
   private
 
