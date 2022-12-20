@@ -15,7 +15,8 @@
 		<%= render 'no_questions', user: @user %>
 <% else %>
 	<div class="container">
-		<%= link_to 'Ask me', new_question_path(user_id: @user), class: 'button button-yellow' %>
+		<%= link_to 'Ask me', new_question_path(nickname: @user),
+			class: 'button button-yellow' %>
 
 		<p><%= render 'questions/form', question: @question %></p>
 	</div>
