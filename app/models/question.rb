@@ -1,5 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :user
+  has_many :hashtag_questions, dependent: :destroy
+  has_many :hashtags, through: :hashtag_questions
 
   belongs_to :author, class_name: 'User', optional: true
 
