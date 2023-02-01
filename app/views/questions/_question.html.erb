@@ -8,12 +8,12 @@
 </div>
 
 <div class="mb-sm">
-	<%= simple_format h(question.body) %>
+	<%= simple_format h(check_hashtags(question.body).html_safe) %>
 </div>
 
 <% if question.answer.present? %>
 	<div class="mb-sm text-dark-red">
-		<%= simple_format h(question.answer) %>
+		<%= simple_format h(check_hashtags(question.answer).html_safe) %>
 	</div>
 <% end %>
 
