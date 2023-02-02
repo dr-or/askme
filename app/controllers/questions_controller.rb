@@ -43,6 +43,10 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  def search
+    @hashtag = Hashtag.find_by!(name: params[:hashtag])
+  end
+
   def show
     @question = Question.find(params[:id])
   end

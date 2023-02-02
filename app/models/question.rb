@@ -11,7 +11,7 @@ class Question < ApplicationRecord
   private
 
   def find_hashtags
-    entire_text.scan(/#[\w-]+/).uniq.each { |hashtag| create_or_find(hashtag) }
+    entire_text.scan(/#[[[:word:]]-]+/).uniq.each { |hashtag| create_or_find(hashtag) }
   end
 
   def create_or_find(hashtag)
