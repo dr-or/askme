@@ -22,3 +22,12 @@
 		<%= render question %>
 	</div>
 <% end %>
+
+<% if @hashtags.any? %>
+	<div class="container mt">
+		<p class="title-sm mb">Hashtags</p>
+		<% @hashtags.each do |hashtag| %>
+			<span><%= search_questions(hashtag.name) %></span>
+		<% end %>
+	</div>
+<% end %>

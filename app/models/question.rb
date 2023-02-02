@@ -25,7 +25,7 @@ class Question < ApplicationRecord
   end
 
   def entire_text
-    return body + answer unless answer.nil?
+    return body + " " + answer unless answer.nil?
     body
   end
 end
