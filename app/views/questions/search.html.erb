@@ -1,12 +1,12 @@
 <div class="container mt">
   <h1 class="title-lg">
-    <%= @hashtag.questions.count %>
-    <%= inclination(@hashtag.questions.count, 'question', 'questions') %>
+    <%= @questions.count %>
+    <%= inclination(@questions.count, 'question', 'questions') %>
     with hashtag #<%= @hashtag.name %>
   </h1>
 </div>
 
-<% @hashtag.questions.each do |question| %>
+<% @questions.each do |question| %>
   <div class="container mt-sm <%= 'translucent' if question.hidden? %>">
     <%= render question %>
   </div>
