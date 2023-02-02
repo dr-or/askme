@@ -54,7 +54,7 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.order(created_at: :desc).first(10)
     @users = User.order(created_at: :desc).first(10)
-    @hashtags = Hashtag.all
+    @hashtags = Hashtag.joins(:hashtag_questions).uniq
   end
 
   def new
