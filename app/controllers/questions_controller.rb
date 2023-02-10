@@ -43,13 +43,19 @@ class QuestionsController < ApplicationController
     redirect_to questions_path
   end
 
+  def search
+    @hashtag = Hashtag.question_hashtags_only.find_by!(name: params[:hashtag])
+    @questions = @hashtag.questions.includes([:user, :author])
+  end
+
   def show
     @question = Question.find(params[:id])
   end
 
   def index
-    @questions = Question.order(created_at: :desc).first(10)
+    @questions = Question.includes([:user, :author]).order(created_at: :desc).first(10)
     @users = User.order(created_at: :desc).first(10)
+    @hashtags = Hashtag.question_hashtags_only
   end
 
   def new
