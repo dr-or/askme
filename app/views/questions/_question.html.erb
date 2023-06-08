@@ -1,38 +1,38 @@
 <div class="text-grey text-sm mb">
-	Question <%= link_to "##{question.id}", question_path(question) %>:
-	<% author = question.author.present? ? 
-		(link_to display_nickname(question.author), user_path(question.author)) : 
-		'anonymous user' %>
-	<%= author %> asked 
-	<%= link_to display_nickname(question.user), user_path(question.user) %>
+  Question <%= link_to "##{question.id}", question_path(question) %>:
+  <% author = question.author.present? ?
+                (link_to display_nickname(question.author), user_path(question.author)) :
+                'anonymous user' %>
+  <%= author %> asked
+  <%= link_to display_nickname(question.user), user_path(question.user) %>
 </div>
 
 <div class="mb-sm">
-	<%= simple_format h(link_hashtags(question.body).html_safe) %>
+  <%= simple_format h(link_hashtags(question.body).html_safe) %>
 </div>
 
 <% if question.answer.present? %>
-	<div class="mb-sm text-dark-red">
-		<%= simple_format h(link_hashtags(question.answer).html_safe) %>
-	</div>
+  <div class="mb-sm text-dark-red">
+    <%= simple_format h(link_hashtags(question.answer).html_safe) %>
+  </div>
 <% end %>
 
 <div class="question-footer text-sm">
-	<div class="text-grey">
-		<%= l(question.created_at, format: :short) %>
-	</div>
+  <div class="text-grey">
+    <%= l(question.created_at, format: :short) %>
+  </div>
 
-	<% if current_user == question.user %>
-		<div>
-			<% edit_icon = question.answer.present? ? 'pencil' : 'reply' %>
-			<% edit_title = question.answer.present? ? 'Edit' : 'Answer' %>
-			<%= link_to fa_icon(edit_icon), edit_question_path(question), 
-				title: "#{edit_title} this question", class: 'mr-sm' %>
-			<%= button_to fa_icon('trash-o'), question_path(question), method: :delete, 
-				title: 'Delete this question', data: { turbo_confirm: 'Are you sure?' },
-				class: 'mr-sm' %>
-			<% eye_icon = question.hidden? ? 'eye' : 'eye-slash' %>
-			<%= button_to fa_icon(eye_icon), hide_question_path(question), method: :put %>
-		</div>
-	<% end %>	
+  <% if current_user == question.user %>
+    <div>
+      <% edit_icon = question.answer.present? ? 'pencil' : 'reply' %>
+      <% edit_title = question.answer.present? ? 'Edit' : 'Answer' %>
+      <%= link_to fa_icon(edit_icon), edit_question_path(question),
+                  title: "#{edit_title} this question", class: 'mr-sm' %>
+      <%= button_to fa_icon('trash-o'), question_path(question), method: :delete,
+                    title: 'Delete this question', data: { turbo_confirm: 'Are you sure?' },
+                    class: 'mr-sm' %>
+      <% eye_icon = question.hidden? ? 'eye' : 'eye-slash' %>
+      <%= button_to fa_icon(eye_icon), hide_question_path(question), method: :put %>
+    </div>
+  <% end %>
 </div>

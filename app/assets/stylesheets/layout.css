@@ -1,31 +1,31 @@
 body {
-	background-color: #03071E;
-	display: flex;
-	justify-content: center;
+  background-color: #03071E;
+  display: flex;
+  justify-content: center;
 }
 
 .wrapper {
-	margin: 40px;
-	width: 100%;
-	max-width: 800px;
+  margin: 40px;
+  width: 100%;
+  max-width: 800px;
 }
 
 .container {
-	background-color: #fff;
+  background-color: #fff;
 }
 
 .container, .navbar {
-	padding: 20px;
+  padding: 20px;
 }
 
 .navbar {
-	color: #fff;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }

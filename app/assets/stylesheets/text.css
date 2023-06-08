@@ -1,34 +1,34 @@
 body {
-	color: #03071E;
-	font-family: sans-serif;
+  color: #03071E;
+  font-family: sans-serif;
 }
 
 a, button {
-	color: #DC2F02;
+  color: #DC2F02;
 }
 
 .title-lg {
-	font-size: 175%;
+  font-size: 175%;
 }
 
 .title-md, .title {
-	font-size: 150%;
+  font-size: 150%;
 }
 
 .title-sm {
-	font-size: 125%;
+  font-size: 125%;
 }
 
 .text-sm {
-	font-size: 80%;
+  font-size: 80%;
 }
 
 .text {
-	font-size: 100%;
+  font-size: 100%;
 }
 
 .text-grey {
-	color: #a8a8a8;
+  color: #a8a8a8;
 }
 
 .text-light-grey {
@@ -36,15 +36,15 @@ a, button {
 }
 
 .text-red {
-	color: #d00000;
+  color: #d00000;
 }
 
 .text-dark-red {
-	color: #9d0208;
+  color: #9d0208;
 }
 
 .text-bold {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .text-center {

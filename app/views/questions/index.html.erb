@@ -1,33 +1,33 @@
 <div class="container">
-	<h2 class="title-lg mb">
-		Recently joined us
-	</h2>
+  <h2 class="title-lg mb">
+    Recently joined us
+  </h2>
 
-	<div class="users-box">
-		<% @users.each do |user| %>
-			<%= render partial: 'users/user_avatar', locals: {user: user} %>
-		<% end %>
-	</div>
+  <div class="users-box">
+    <% @users.each do |user| %>
+      <%= render partial: 'users/user_avatar', locals: {user: user} %>
+    <% end %>
+  </div>
 </div>
 
 <div class="container mt">
-	<h1 class="title-lg">
-		<%= @questions.count %>
-		<%= inclination(@questions.count, 'question', 'questions') %>
-	</h1>
+  <h1 class="title-lg">
+    <%= @questions.count %>
+    <%= inclination(@questions.count, 'question', 'questions') %>
+  </h1>
 </div>
 
 <% @questions.each do |question| %>
-	<div class="container mt-sm <%= 'translucent' if question.hidden? %>">
-		<%= render question %>
-	</div>
+  <div class="container mt-sm <%= 'translucent' if question.hidden? %>">
+    <%= render question %>
+  </div>
 <% end %>
 
 <% if @hashtags.any? %>
-	<div class="container mt">
-		<p class="title-sm mb">Hashtags</p>
-		<% @hashtags.each do |hashtag| %>
-			<span><%= link_to hashtag.name, search_questions_path(hashtag: hashtag.name) %></span>
-		<% end %>
-	</div>
+  <div class="container mt">
+    <p class="title-sm mb">Hashtags</p>
+    <% @hashtags.each do |hashtag| %>
+      <span><%= link_to hashtag.name, search_questions_path(hashtag: hashtag.name) %></span>
+    <% end %>
+  </div>
 <% end %>

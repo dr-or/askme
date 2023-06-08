@@ -1,17 +1,17 @@
 .button {
-	border: 0;
-	border-radius: 3px;
-	color: #fff;
-	display: inline-block;
-	font-size: 14px;
-	text-decoration: none;
-	padding: 8px 13px 7px;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 8px 13px 7px;
 }
 
 .button-main {
-	background-color: #9D0208;
+  background-color: #9D0208;
 }
 
 .button-yellow {
-	background-color: #ffba08;
+  background-color: #ffba08;
 }

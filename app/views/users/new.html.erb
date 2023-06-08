@@ -1,30 +1,30 @@
 <div class="container">
-	<h2 class="title-lg">Join us and ask your questions</h2>
+  <h2 class="title-lg">Join us and ask your questions</h2>
 
-	<div class="mt">
-		<% @user.errors.full_messages.each do |message| %>
-			<p class="mb-sm text-red"><%= message %></p>
-		<% end %>
-	</div>
+  <div class="mt">
+    <% @user.errors.full_messages.each do |message| %>
+      <p class="mb-sm text-red"><%= message %></p>
+    <% end %>
+  </div>
 
-	<div class="mt-lg">
-		<%= form_with model: @user, data: { turbo: false } do |form| %>
-			<p><%= form.label :name, 'Your name' %></p>
-			<p><%= form.text_field :name, class: 'form-text-field' %></p>
-			
-			<p class="mt"><%= form.label :nickname, 'Your nickname' %></p>
-			<p><%= form.text_field :nickname, class: 'form-text-field' %></p>
-			
-			<p class="mt"><%= form.label :email, 'Your email' %></p>
-			<p><%= form.text_field :email, class: 'form-text-field' %></p>
+  <div class="mt-lg">
+    <%= form_with model: @user, data: { turbo: false } do |form| %>
+      <p><%= form.label :name, 'Your name' %></p>
+      <p><%= form.text_field :name, class: 'form-text-field' %></p>
 
-			<p class="mt"><%= form.label :password %></p>
-			<p><%= form.password_field :password, class: 'form-text-field' %></p>
+      <p class="mt"><%= form.label :nickname, 'Your nickname' %></p>
+      <p><%= form.text_field :nickname, class: 'form-text-field' %></p>
 
-			<p class="mt"><%= form.label :password_confirmation %></p>
-			<p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
+      <p class="mt"><%= form.label :email, 'Your email' %></p>
+      <p><%= form.text_field :email, class: 'form-text-field' %></p>
 
-			<p class="mt-lg"><%= form.submit 'Sign up', class: 'button button-main' %></p>
-		<% end %>
-	</div>
+      <p class="mt"><%= form.label :password %></p>
+      <p><%= form.password_field :password, class: 'form-text-field' %></p>
+
+      <p class="mt"><%= form.label :password_confirmation %></p>
+      <p><%= form.password_field :password_confirmation, class: 'form-text-field' %></p>
+
+      <p class="mt-lg"><%= form.submit 'Sign up', class: 'button button-main' %></p>
+    <% end %>
+  </div>
 </div>
