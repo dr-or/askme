@@ -20,8 +20,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def show
     @questions = @user.questions.includes([:author]).order(created_at: :desc)
@@ -57,6 +56,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :nickname, :email, :password, :password_confirmation,
-      :navbar_color)
+                                 :navbar_color)
   end
 end

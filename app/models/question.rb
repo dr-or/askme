@@ -12,10 +12,10 @@ class Question < ApplicationRecord
 
   def create_hashtags
     self.hashtags =
-      "#{body} #{answer}".
-        downcase.
-        scan(Hashtag::REGEXP).
-        uniq.
-        map { |hashtag| Hashtag.find_or_create_by(name: hashtag.delete("#")) }
+      "#{body} #{answer}"
+      .downcase
+      .scan(Hashtag::REGEXP)
+      .uniq
+      .map { |hashtag| Hashtag.find_or_create_by(name: hashtag.delete('#')) }
   end
 end

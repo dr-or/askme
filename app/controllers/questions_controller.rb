@@ -45,7 +45,7 @@ class QuestionsController < ApplicationController
 
   def search
     @hashtag = Hashtag.question_hashtags_only.find_by!(name: params[:hashtag])
-    @questions = @hashtag.questions.includes([:user, :author])
+    @questions = @hashtag.questions.includes(%i[user author])
   end
 
   def show
@@ -53,7 +53,7 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @questions = Question.includes([:user, :author]).order(created_at: :desc).first(10)
+    @questions = Question.includes(%i[user author]).order(created_at: :desc).first(10)
     @users = User.order(created_at: :desc).first(10)
     @hashtags = Hashtag.question_hashtags_only
   end
@@ -63,8 +63,7 @@ class QuestionsController < ApplicationController
     @question = Question.new(user: @user)
   end
 
-  def edit
-  end
+  def edit; end
 
   private
 
