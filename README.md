@@ -1,6 +1,6 @@
 # AskMe
 
-AskMe is an application that serves as a clone of [ask.fm](https://ask.fm/). It provides a platform where users can register, ask questions anonymously or openly, answer questions, filter questions by hashtags, customize the page's color, and set up their avatar using Gravatar.
+AskMe is an application that serves as a clone of [ask.fm](https://ask.fm/). It provides a platform where users can register, ask questions anonymously or openly, answer questions, filter questions by hashtags, customize the page's color, and set up their avatar using [Gravatar](https://en.gravatar.com/).
 
 ## Technology Stack
 
@@ -12,7 +12,7 @@ To get started with AskMe, please follow the steps below:
 
 ### Prerequisites
 
-Make sure you have Ruby 3.1.4 installed on your system. You can use a version manager like rbenv or rvm for this purpose.
+Make sure you have Ruby 3.1.4 installed on your system. You can use a version manager like [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://github.com/rvm/rvm) for this purpose.
 
 ### Installation
 
@@ -28,6 +28,7 @@ cd askme
 
 3. Install the required dependencies by running the following command:
 ```
+bundle config set --local without 'production'
 bundle install
 ```
 
@@ -36,9 +37,7 @@ bundle install
 bundle exec rails db:migrate
 ```
 
-## Running the Application
-
-Start the local server by running the following command:
+5. Start the local server by running the following command:
 ```
 bundle exec rails s
 ```
